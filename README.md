@@ -58,12 +58,14 @@ npm install
 
 ## Prepping The Database
 
-Now, you need to create a MySQL database, called "tms_db", so you should have MySQL DB Engine installed and ready, then run the commands:
+Now, you need to create a MySQL database, called "tms_db", so you should have MySQL DB Engine installed and ready then run the commands:
 
 ```bash
 mysql -u root -p
 CREATE DATABASE tms_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE tms_db;
+
+
 
 Adding projects: 
 For example:
@@ -71,7 +73,12 @@ For example:
 INSERT INTO `projects`(`name`) VALUES ("Management");
 ```
 
-Now, edit your .env config file, then run the following command ti migrate the database:
+Now, edit your .env  config file based on your database, and generating a key:
+
+```bash
+php artisan key:generate
+```
+Then run the following command to migrate the database:
 
 ```bash
 php artisan migrate
